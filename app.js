@@ -129,10 +129,7 @@ function plus(e){
     var yeka = p[1];
     var span2 = e.target.parentElement.parentElement.children[1];
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var tekrar = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var tekrar = Number(num0.substring()[7]+ num0.substring()[8]);}
+    var tekrar = Number(num0.match(/\d{1,3}/)[0]);
     var vahed = Number(p[0])/tekrar;
     var olaviyat = -e.target.parentElement.parentElement.style.order
 
@@ -149,11 +146,7 @@ function plus(e){
     
     // دستگاه تشخیص اعداد تا دو رقم برای ظرفیت اسپن دوم
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var num1 = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var num1 = Number(num0.substring()[7]+ num0.substring()[8]);
-    }
+    var num1 = Number(num0.match(/\d{1,3}/)[0]); 
     // اگه نوار وظیفه وجود نداره
     // با اولین کلیک رو دکمه ی افزایش یدونه بساز
     if(haveDiv === 0){
@@ -170,11 +163,7 @@ function plus(e){
     }else{
         // دستگاه تشخیص اعداد تا دو رقم برای مقدار نوار وظیفه
         var num = span2.children[0].style.gridColumn;
-        if (num.length === 13){
-        var num2 = Number(num.substring()[5]);
-        } else if (num.length === 14){
-        var num2 = Number(num.substring()[5]+ num.substring()[6]);
-        }
+        var num2 = Number(num.match(/\d{1,3}/)[0]);
         // اگه نوار وظیفه از ظرفیتش کمتر بود یدونه بیشترش کن
         if (num2 < num1-1){
         var newNum = num2+1;
@@ -205,10 +194,7 @@ function subtrac(e){
     var yeka = p[1];
     var span2 = e.target.parentElement.parentElement.children[1];
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var tekrar = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var tekrar = Number(num0.substring()[7]+ num0.substring()[8]);}
+    var tekrar = Number(num0.match(/\d{1,3}/)[0]);
     var vahed = Number(p[0])/tekrar;
     var olaviyat = -e.target.parentElement.parentElement.style.order
 
@@ -224,20 +210,12 @@ function subtrac(e){
     var haveDiv = e.target.parentElement.parentElement.children[1].children.length
     // دستگاه تشخیص اعداد تا دو رقم برای ظرفیت اسپن دوم
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var num1 = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var num1 = Number(num0.substring()[7]+ num0.substring()[8]);
-    }
+    var  num1 = Number(num0.match(/\d{1,3}/)[0]);
     // اگه نوار وظیفه وجود داشت یه واحد کمترش کن
     if (haveDiv !== 0){
         // دستگاه تشخیص اعداد تا دو رقم برای مقدار نوار وظیفه
         var num = span2.children[0].style.gridColumn;
-        if (num.length === 13){
-        var num2 = Number(num.substring()[5]);
-        } else if (num.length === 14){
-        var num2 = Number(num.substring()[5]+ num.substring()[6]);
-        }
+        var num2 = Number(num.match(/\d{1,3}/)[0]);
         // اگه ظرفیت پر بود، موقع کم کردن، رنگ نوار رو برگردون
         if (num2 === num1 && num1 !== 1){
         var newNum = num2-1;
@@ -284,10 +262,7 @@ function edit(e){
     var yeka = p[1];
     var span2 = e.target.parentElement.parentElement.children[1];
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var tekrar = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var tekrar = Number(num0.substring()[7]+ num0.substring()[8]);}
+    var tekrar = Number(num0.match(/\d{1,3}/)[0]);
     var vahed = Number(p[0])/tekrar;
     var olaviyat = -e.target.parentElement.parentElement.style.order
     // Local Storage
@@ -418,10 +393,7 @@ function del(e){
     var yeka = p[1];
     var span2 = e.target.parentElement.parentElement.children[1];
     var num0 = span2.style.gridTemplateColumns;
-    if (num0.length === 14){
-    var tekrar = Number(num0.substring()[7]);
-    }else if (num0.length === 15) {
-    var tekrar = Number(num0.substring()[7]+ num0.substring()[8]);}
+    var tekrar = Number(num0.match(/\d{1,3}/)[0]);
     var vahed = Number(p[0])/tekrar;
     var olaviyat = -e.target.parentElement.parentElement.style.order
     // Local Storage
